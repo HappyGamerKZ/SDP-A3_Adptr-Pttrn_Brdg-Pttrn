@@ -3,7 +3,7 @@ package org.aitu;
 public class BilimLandAPIClient implements PlatformImplementor {
     private final String student;
 
-    BilimLandAPIClient(String student) {
+    public BilimLandAPIClient(String student) {
         this.student = student;
     }
 
