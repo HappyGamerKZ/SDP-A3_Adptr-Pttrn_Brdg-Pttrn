@@ -7,7 +7,7 @@ public interface PlatformImplementor {
 
     String getStudentName();
 
-    String getScore();
+    int getScore();
 
     String getPayload();
 }

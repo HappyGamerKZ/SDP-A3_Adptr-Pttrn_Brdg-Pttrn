@@ -10,7 +10,7 @@ public class Main {
                     "student-name": "John Pork",
                     "payload":{
                     "score": 95,
-                    "code": "hero.moveRight()"
+                    "assignment": "hero.moveRight()"
                     }
                 }
                 """;
@@ -21,8 +21,8 @@ public class Main {
                     "student-id": "IIN-010101010101",
                     "student-name": "Genadiy Genadievich Golovkin",
                     "payload":{
-                    "score": 50,
-                    "code": "<html><body><h1>My First Page</h1></body></html>"
+                    "score": 4,
+                    "home-task": "<html><body><h1>My First Page</h1></body></html>"
                     }
                 }
                 """;
@@ -36,6 +36,6 @@ public class Main {
                 }
                 """;
 
-        }
     }
 }
+
