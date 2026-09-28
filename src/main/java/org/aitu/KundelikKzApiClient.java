@@ -46,6 +46,6 @@ public class KundelikKzApiClient implements PlatformImplementor {
 
     @Override
     public String getPayload() {
-        return extractJsonField("assignment");
+        return extractJsonField("home-task");
     }
 }

@@ -6,13 +6,13 @@ public class PlatformFactory {
             throw new IllegalArgumentException("Student cannot be null or blank");
         }
 
-        if (student.contains("\"platform\": \"bilim-land\"")){
+        if (student.contains("\"platform\": \"bilim-land\"")) {
             return new BilimLandAPIClient(student);
-        } else if (student.contains("\"platform\": \"AITU-LMS\"")){
+        } else if (student.contains("\"platform\": \"kundelik.kz\"")) { // ИСПРАВЛЕНО
+            return new KundelikKzApiClient(student);
+        } else if (student.contains("\"platform\":\"aitu-lms\"")) { // ИСПРАВЛЕНО
             AituLmsApiClient client = new AituLmsApiClient(student);
             return new AituLmsApiAdapter(client);
-        } else if (student.contains("\"platform\": \"kundelik.kz\"")){
-            return new KundelikKzApiClient(student);
         }
 
         throw new IllegalArgumentException("Unknown platform type in raw data");

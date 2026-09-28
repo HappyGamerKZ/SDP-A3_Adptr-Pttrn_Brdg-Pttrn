@@ -29,13 +29,27 @@ public class Main {
 
         String Student3 = """
                 {
-                    "platform":"AITU-LMS",
+                    "platform":"aitu-lms",
                     "student-id":"UUID-777",
                     "student-name":"Michael Jackson",
                     "payload":"<xml><score>0</score><code>print('Hi')</code></xml>",
                 }
                 """;
 
+        String[] incomingRequests = {Student1, Student2, Student3};
+
+        for (String rawData : incomingRequests) {
+            // 1. Динамически получаем реализатор через фабрику
+            PlatformImplementor implementor = PlatformFactory.createPlatformImplementor(rawData);
+
+            // 2. Передаем его в мост-абстракции
+            StudentTaskView quickView = new QuickSummaryView(implementor);
+            StudentTaskView detailedView = new DetailedCodeReviewView(implementor);
+
+            // 3. Отрисовываем
+            quickView.render();
+            detailedView.render();
+        }
     }
 }
 
